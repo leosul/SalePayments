@@ -38,6 +38,7 @@ namespace PaymentConsumer
     {
         public async Task Consume(ConsumeContext<PaymentViewModel> context)
         {
+            
             await Console.Out.WriteLineAsync($"Notification sent: Name: {context.Message.Name} - Amount: {context.Message.Amount}");
         }
     }

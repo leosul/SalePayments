@@ -37,8 +37,6 @@ namespace AppQueueClient
                     false);
 
                 ConsumeApi(item, dgvMain.Rows.Count - 1);
-
-                Thread.Sleep(1000);
                 dgvMain.Refresh();
             }
         }

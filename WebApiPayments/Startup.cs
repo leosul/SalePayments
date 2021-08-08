@@ -37,6 +37,7 @@ namespace WebApiPayments
                         h.Username(RabbitMqSettings.UserName);
                         h.Password(RabbitMqSettings.Password);
                     });
+
                 }));
             });
             services.AddMassTransitHostedService();

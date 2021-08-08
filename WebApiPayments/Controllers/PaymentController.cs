@@ -1,6 +1,7 @@
 ﻿using MassTransit;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Threading;
 using System.Threading.Tasks;
 using WebApiPayments.Models;
 using WebApiPayments.ViewModel;
@@ -25,6 +26,9 @@ namespace WebApiPayments.Controllers
 
             Uri uri = new(RabbitMqSettings.RabbitMqUri);
             var endPoint = await _bus.GetSendEndpoint(uri);
+            
+            await Task.Delay(5000);
+            
             await endPoint.Send(paymentViewModel);
 
             return Ok("Success");
